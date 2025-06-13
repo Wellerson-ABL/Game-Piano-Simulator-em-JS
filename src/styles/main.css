@@ -1,0 +1,114 @@
+body {
+    background-image: url(/src/img/fundo.webp);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e3f2fd;
+    color: #fff;
+}
+.container {
+    width: 780px;
+    border-radius: 20px;
+    padding: 35px 40px;
+    background-color: #625f5f;
+    opacity: 90%;
+}
+.container header {
+    background: linear-gradient(190deg, blue 59%, yellow 90%, black 100% );
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px 2pc;  
+    box-shadow: 0px 5px 15px white;
+}
+header h2 {
+    font-size: 1.6rem;
+}
+header .column {
+    display: flex;
+    align-items: center;
+}
+header .column span {
+    font-weight: 500;
+    margin-right: 15px;
+    font-size: 1.19rem;    
+}
+.volume-slider input {
+    accent-color: #fff;  /*aplica o branco quanto esta acentuado*/    
+}
+.keys-check input {
+    width: 60px;
+    height: 30px;
+    outline:none; /*retirou o efeito do selecionar do TAB na Teclas*/
+    appearance: none; /*Retirou o todo o estilo do objeto.*/
+    border-radius: 30px;
+    background-color: #4b4b4b;
+    cursor: pointer;
+    position: relative;  /*os filhos sao absolutos ao pais.*/
+}
+.keys-check input::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #8c8c8c;
+    top: 50%;
+    left: 0.3rem;
+    border-radius: inherit;  /*herdado do pai*/
+    position: absolute;
+    transform: translateY(-50%); /*alinhou o checked, dentro da  background da telcas*/
+    transition: all 0.3s ease;
+}
+.keys-check input:checked::before {
+    left: 2.1rem;
+    background-color: #fff;
+}
+.piano-keys {
+    display: flex;
+    margin-top: 40px;
+}
+.piano-keys .key {
+cursor: pointer;
+list-style: none;
+color: #a2a2a2;
+user-select: none; /*nao consegue selecionar o texto ouobjeto*/
+position: relative;
+text-transform: uppercase; /*maiuscula*/
+}
+.piano-keys .white{
+    width: 70px;
+    height: 230px;
+    border: 1px solid #000;
+    background: linear-gradient(#fff 96%, #eee 4%);
+    border-radius: 8px;
+}
+
+.piano-keys .black{
+    width: 44px;
+    height: 140px;
+    z-index: 2;
+    margin: 0 -22px 0 -22px; /*deslocou as teclas pretas*/
+    border: 1px solid #000;
+    background: linear-gradient(#333, #000);
+    border-radius: 0 0 5px 5px;
+}
+.piano-keys span {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.13rem;
+
+}
+.piano-keys .white:active{  /*estilizando quandoo botao estiver apertando.*/
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom #fff 0%, #eee 100%);
+}
+.piano-keys .black:active{  /*estilizando quandoo botao estiver apertando.*/
+    box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom #000, #434343);
+}
